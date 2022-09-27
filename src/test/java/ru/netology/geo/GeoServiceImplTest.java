@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class GeoServiceImplTest {
-    private GeoServiceImpl geoService = new GeoServiceImpl();
+    private final GeoServiceImpl geoService = new GeoServiceImpl();
 
     @Test
     @DisplayName("Тест локального IP")
@@ -25,6 +25,7 @@ public class GeoServiceImplTest {
     void byIPRussia() {
         assertEquals(Country.RUSSIA, geoService.byIp("172.").getCountry());
     }
+
     @DisplayName("Тест американского IP")
     @Test
     void shouldBeUSA() {
